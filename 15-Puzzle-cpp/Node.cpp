@@ -8,6 +8,7 @@ Node::Node(int * init_board)
         board[i] = init_board[i];
         if(init_board[i] == 0) blank = i;
     }
+    
     parent = NULL;
     g = 0;
     h = Heuristic::getDistance(*this);
@@ -21,6 +22,7 @@ Node::Node(uint8_t * init_board)
         board[i] = init_board[i];
         if(init_board[i] == 0) blank = i;
     }
+    
     parent = NULL;
     g = 0;
     h = Heuristic::getDistance(*this);

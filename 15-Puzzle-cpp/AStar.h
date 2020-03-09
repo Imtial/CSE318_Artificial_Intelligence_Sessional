@@ -9,7 +9,6 @@ class AStar
     private:
         Node * goal;
         list<Node> closed_list;
-        
     public:
 
         MinHeap open_list;

@@ -9,27 +9,27 @@ class CompareNode
 {
     public:
     CompareNode(){}
-    bool operator() (const Node &lhs, const Node &rhs) const
+    bool operator() (const Node *lhs, const Node *rhs) const
     {
-        return (lhs.f > rhs.f);
+        return (lhs->f > rhs->f);
     }
 };
 
 class MinHeap
 {
     private:
-        vector<Node> heap;
+        vector<Node*> heap;
         CompareNode cb;
     public:
         MinHeap();
-        void push(Node &b);
+        void push(Node * node);
         void pop();
-        Node& top();
+        Node* top();
         bool empty();
         size_t size();
-        size_t count(Node &b);
-        vector<Node>::iterator find(const Node &b);
-        bool adjust(Node &node);
+        size_t count(Node * node);
+        bool adjust(Node * node);
+        void printHeap();
 };
 
 #endif // MINHEAP_H
